@@ -1,6 +1,6 @@
 <launch>
 
-  <rosparam command="load" file="$(find hc10_moveit_config)/config/sensors_kinect.yaml" />
+  <rosparam command="load" file="$(find hc10_moveit_config)/config/sensors_3d.yaml" />
 
   <!-- Load the robot specific sensor manager; this sets the moveit_sensor_manager ROS parameter -->
  <param name="octomap_frame" type="string" value="odom_combined" />
