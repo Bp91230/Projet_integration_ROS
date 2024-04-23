@@ -73,7 +73,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://motjoint_1_soman_hc10_support/meshes/hc10/collision/link_3_u.stl"/>
+          <mesh filename="package://motoman_hc10_support/meshes/hc10/collision/link_3_u.stl"/>
         </geometry>
       </collision>
     </link>
@@ -131,7 +131,7 @@
         </geometry>
       </collision>
     </link>
-    <link name="${prefix}tool0"/>
+
     <!-- end of link list -->
 
     <!-- joint list -->
@@ -186,11 +186,6 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
       <axis xyz="0 0 1" />
       <limit lower="${radians(-180)}" upper="${radians(180)}" effort="31.36" velocity="${radians(250)}"/>
-    </joint>
-    <joint name="${prefix}joint_6_t-tool0" type="fixed">
-      <origin xyz="0 0 -0.130" rpy="${pi} 0 0"/>
-      <parent link="${prefix}link_6_t"/>
-      <child link="${prefix}tool0"/>
     </joint>
     <!-- end of joint list -->
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="motoman_hc10_robot2Kinect" params="prefix">
+    <xacro:include filename="$(find motoman_resources)/urdf/common_materials.xacro"/>
+
+    <!-- joint list -->
+    <joint name="${prefix}joint_6_t-tool0" type="fixed">
+      <origin xyz="0 0.06 -0.160" rpy="${pi} ${pi/2} ${pi/2}"/>
+      <parent link="${prefix}link_6_t"/>
+      <child link="${prefix}tool0"/>
+    </joint>
+    <!-- end of joint list -->
+  </xacro:macro>
+</robot>
