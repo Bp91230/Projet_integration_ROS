@@ -146,7 +146,6 @@
       </geometry>
     </collision>
   </link>
-  <link name="tool0"/>
   <!-- end of link list -->
   <!-- joint list -->
   <joint name="world_fixed" type="fixed">
@@ -200,11 +199,6 @@
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit effort="31.36" lower="-3.141592653589793" upper="3.141592653589793" velocity="4.363323129985824"/>
-  </joint>
-  <joint name="joint_6_t-tool0" type="fixed">
-    <origin rpy="3.141592653589793 0 0" xyz="0 0 -0.130"/>
-    <parent link="link_6_t"/>
-    <child link="tool0"/>
   </joint>
   <!-- end of joint list -->
   <!-- ROS base_link to Robot Manufacturer World Coordinates transform -->

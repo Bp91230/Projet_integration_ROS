@@ -4,9 +4,9 @@
     <xacro:include filename="$(find motoman_resources)/urdf/common_materials.xacro"/>
 
     <!-- link list -->
-    <link name="${prefix}tool0">
+    <link name="${prefix}camera_depth_frame">
       <inertial>
-        <origin xyz="0 0.06 -0.160" rpy="${pi} ${pi/2} ${pi/2}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="0.1"/>
         <inertia ixx="0.03" ixy="0.03" ixz="0.03" iyy="0.0" iyz="0.0" izz="00"/>
       </inertial>
@@ -24,7 +24,15 @@
     </link>
     <!-- end of link list -->
     
-    <gazebo reference="camera_depth_frame">
+    
+    <joint name="${prefix}tool0_t_cam" type="fixed">
+      <origin xyz="0 -0.06 0.05" rpy="0 ${-pi/2} ${-pi/2}"/>
+      <parent link="${prefix}tool0"/>
+      <child link="${prefix}camera_depth_frame"/>
+    </joint>
+    
+    
+    <gazebo reference="${prefix}camera_depth_frame">
     <sensor name="kinect_camera" type="depth">
         <update_rate>20</update_rate>
         <camera>
