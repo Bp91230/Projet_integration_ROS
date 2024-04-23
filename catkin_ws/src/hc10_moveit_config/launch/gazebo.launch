@@ -29,5 +29,5 @@
   <node name="gazebo_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" />
   <!-- Load ROS controllers -->
   <include file="$(dirname)/ros_controllers.launch"/>
-
+  
 </launch>
