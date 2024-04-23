@@ -22,6 +22,7 @@
         </geometry>
       </collision>
     </link>
+    <link name="camera_depth_optical_frame"/>
     <!-- end of link list -->
     
     
@@ -29,6 +30,12 @@
       <origin xyz="0 -0.06 0.05" rpy="0 ${-pi/2} ${-pi/2}"/>
       <parent link="${prefix}tool0"/>
       <child link="${prefix}camera_depth_frame"/>
+    </joint>
+    
+    <joint name="${prefix}cam_t_optical" type="fixed">
+      <origin xyz="0 0 0" rpy=" ${-pi/2} 0 ${-pi/2}"/>
+      <parent link="${prefix}camera_depth_frame"/>
+      <child link="camera_depth_optical_frame"/>
     </joint>
     
     

@@ -2,7 +2,6 @@ digraph G {
 node [shape=box];
 "world" [label="world"];
 "base_link" [label="base_link"];
-"base" [label="base"];
 "link_1_s" [label="link_1_s"];
 "link_2_l" [label="link_2_l"];
 "link_3_u" [label="link_3_u"];
@@ -10,11 +9,11 @@ node [shape=box];
 "link_5_b" [label="link_5_b"];
 "link_6_t" [label="link_6_t"];
 "tool0" [label="tool0"];
+"camera_depth_frame" [label="camera_depth_frame"];
+"camera_depth_optical_frame" [label="camera_depth_optical_frame"];
 node [shape=ellipse, color=blue, fontcolor=blue];
 "world" -> "world_fixed" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
 "world_fixed" -> "base_link"
-"base_link" -> "base_link-base" [label="xyz: 0 0 0.275 \nrpy: 0 -0 0"]
-"base_link-base" -> "base"
 "base_link" -> "joint_1_s" [label="xyz: 0 0 0.275 \nrpy: 0 -0 0"]
 "joint_1_s" -> "link_1_s"
 "link_1_s" -> "joint_2_l" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
@@ -27,6 +26,10 @@ node [shape=ellipse, color=blue, fontcolor=blue];
 "joint_5_b" -> "link_5_b"
 "link_5_b" -> "joint_6_t" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
 "joint_6_t" -> "link_6_t"
-"link_6_t" -> "joint_6_t-tool0" [label="xyz: 0 0.06 -0.16 \nrpy: 0 1.5708 -1.5708"]
+"link_6_t" -> "joint_6_t-tool0" [label="xyz: 0 0 -0.13 \nrpy: 3.14159 -0 0"]
 "joint_6_t-tool0" -> "tool0"
+"tool0" -> "tool0_t_cam" [label="xyz: 0 -0.06 0.05 \nrpy: 0 -1.5708 -1.5708"]
+"tool0_t_cam" -> "camera_depth_frame"
+"camera_depth_frame" -> "cam_t_optical" [label="xyz: 0 -0.06 0.05 \nrpy: 0 -1.5708 -1.5708"]
+"cam_t_optical" -> "camera_depth_optical_frame"
 }
